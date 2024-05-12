@@ -3,7 +3,7 @@ Given('I am on the homepage automationexercise.com') do
   end
   
   When('I click sign in on the homepage') do
-    pending # Write code here that turns the phrase above into concrete actions
+    find(:xpath, "//a[@href='/login']").click
   end
   
   When('I fill my credentials on the homepage') do
