@@ -3,8 +3,8 @@ Before do |scenario|
   end
   
   After do |scenario|
-    sleep 3
-    take_screenshot
+    # sleep 3
+    # take_screenshot
   end
 
   # ss scenario failed
@@ -23,6 +23,6 @@ Before do |scenario|
 
 
   at_exit do
-    generate_report
-    # Kernel.exit(0)
+    # generate_report
+    # # Kernel.exit(0)
   end
