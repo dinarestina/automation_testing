@@ -10,3 +10,4 @@ Feature: Google search
       | keyword  |
       | capybara |
       | selenium |
+      | ruby     |

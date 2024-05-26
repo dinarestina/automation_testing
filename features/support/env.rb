@@ -6,9 +6,17 @@ require 'report_builder'
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'site_prism'
+require 'dotenv'
 
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox, timeout: 30)
+  if ENV['HEADLESS'].downcase == 'yes'
+    options.add_argument('--headless')
+  end
+
+  if ENV['PRIVATE'].downcase == 'yes'
+    options.add_argument('-private')
+  end
 end
 
 Capybara.configure do |config|
@@ -18,6 +26,7 @@ end
 
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Firefox::Options.new
+  options.add_argument('--headless') #untuk run scenario tanpa tampilkan pop up
   options.add_argument('-private')
   Capybara::Selenium::Driver.new(
     app,
