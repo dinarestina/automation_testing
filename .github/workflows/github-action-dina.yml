@@ -31,4 +31,4 @@ jobs:
           bundle install
 
       - name: Run Capybara tests
-        run: cucumber -t @pertemuan-5 HEADLESS=yes PRIVATE=yes --publish --retry 3  
+        run: cucumber -t @pertemuan-5 HEADLESS=yes PRIVATE=yes --publish 
